@@ -1,0 +1,15 @@
+3. create TABLE klient(Id_klient int primary key AUTO_INCREMENT, Nazwisko varchar(60), Imie varchar(60), kod_pocztowy VARCHAR(6), miejscowosc VARCHAR(50), ulica VARCHAR(50), nr_domu VARCHAR(7), PESEL VARCHAR(11), telefon VARCHAR(12), adres_e_mail VARCHAR(70))
+
+4. CREATE table Ksiazka(id_książki int AUTO_INCREMENT PRIMARY KEY, tytul varchar(60), autor varchar(50), cena int, wydawnictwo varchar(60), temat varchar(60), miejsce_wydania varchar(60), język_książki varchar(60), opis text);
+
+5. drop TABLE osoba;
+
+6. CREATE TABLE Autor(id_autora int PRIMARY key AUTO_INCREMENT, nazwisko varchar(45), imie varchar(45));
+
+7. ALTER TABLE ksiazka add liczba_stron int;
+
+8. ALTER TABLE ksiazka add rok_wydania int
+
+9. ALTER TABLE ksiazka drop liczba_stron;
+
+10. 
