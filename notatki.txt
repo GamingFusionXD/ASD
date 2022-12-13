@@ -1,0 +1,27 @@
+1. UPDATE nazwaTabeli SET miejscowosc = "Katowice";
+
+2. UPDATE nazwaTabeli SET miejscowosc = "Katowice" where imie like "Agnieszka" and nazwisko like "Nowak";
+
+3. DELETE FROM nazwaTabeli WHERE imie like "Rafal";
+
+4. DELETE FROM nazwaTabeli WHERE nazwisko like "nowak" limit 3; 
+
+===============================================================================================================================================================================
+
+1. Select imie,nazwisko from klient;
+
+2. select * from ksiazki;
+
+3. select distinct(miejscowosc) from klient;
+
+4. select (cena*0.8) as "cena promocyjna" from ksiazka;
+
+===============================================================================================================================================================================
+
+1. insert INTO ksiazki VALUES(1,"Projektowanie stron internetowych",1,35,"Helion","Internet",null,null,null,null)
+
+2. insert INTO ksiazki VALUES(2,"Aplikascje internetowe",2,57,"Helion","Internet",null,null,null,null),(3,"SQL Server 2008",3,45,"PWN","Bazy Danych",null,null,null,null)
+
+3. insert INTO klient (nazwisko, imie,PESEL) values ("Nowak", "Andrzej", "78021203121"),("Kowalski","Jan","81092902821"),("Gorski","Antoni","89120217239")
+
+===============================================================================================================================================================================
