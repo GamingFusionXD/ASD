@@ -1,56 +1,96 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiosna</title>
+	<title>Praktyki uczniów - strona główna</title>
+	<meta charset="UTF-8">
 </head>
 <body>
-    <a name="góra"></a>
 
-    <section id="nagłówek">
-        <h1>Witaj wiosno</h1>
-        <p>Sebastian</p>
-        <a name="poczatek"></a>
+<header>
+	<h1>Praktyki uczniów technikum</h1>
+</header>
 
-    </section>
-    <section id="nav">
-        <a href="https://onet.pl"><input type="button" value="onet.pl"></a>
-        <p>"Witaj w <b><u>nowym świecie</u></b> - pełno w nim H<sub>2</sub>O"</p>
-        <a href="http://127.0.0.1:3000/index.html"><label id="odswiezenie">Odświeżenie</label></a>
-       </section>
-        <section id="główna">
-            <h2>Wszystko się budzi</h2>
-            <p>opowiedz o swoich doświadczeniach</p>
-            <ol>
-                <li>w lesie</li>
-                <li>nad morzem</li>
-                <li>nad jeziorem</li>      
-            </ol>
-            <img src="img.jpg" width="150px" height="100px">
-            <figcaption>plaża</figcaption>
-            <a href="#poczatek">Początek</a>
-            </section>
-            <section id="form">
-                <form method="get">
-                    <label>Imię:</label>
-                    <input type="text"><br>
-                    <label>hasło:</label>
-                    <input type="password"><br>
-                    <label>Email: </label>
-                    <input type="email"><br>
-                    <input type="submit" value="zatwierdź">
+<nav>
+	<button>Wyświetl zakłady pracye</button>
+</nav>
 
-                </form>
-            </section>
-            <section id="stopka">
-                <h3>Dziękuje za wejście na stronę</h3>
-                <a href="#góra">Góra strony</a>
-                <p>"O 12<sup>00</sup> słońce jest najwyżej na <s>horyzoncie</s> <u>Załóż wtedy czapkę z daszkiem!</u></p>
-            </section>
+<main>
+	
+	<section>
+		<h2>Wprowadź dane</h2>
+		<form method="POST">
+			<label for="osoby">Osoba:</label>
+			<select id="osoby" name="osoby">
+				<option value="">Wybierz osobę</option>
+			</select><br>
 
-        
-   
+			<label for="prace">Zatwierdzone prace:</label>
+			<select id="prace" name="prace">
+				<option value="">Wybierz zatwierdzoną pracę</option>
+			</select><br>
+
+			<label for="datastart">Data rozpoczęcia praktyk:</label>
+			<input type="date" id="data-start" name="data-start"><br>
+
+			<label for="datakoniec">Data zakończenia praktyk:</label>
+			<input type="date" id="data-koniec" name="data-koniec"><br>
+
+			<label for="ocena">Ocena z praktyk:</label>
+			<input type="number" id="ocena" name="ocena" min="1" max="6"><br>
+
+			<button type="submit">Zatwierdź</button>
+			<button type="reset">Resetuj</button>
+		</form>
+	</section>
+
+	<section>
+		<h2>Komunikaty</h2>
+	</section>
+
+	<section>
+		<h2>Zakłady</h2>
+	</section>
+</main>
+
+<footer>
+	Wykonane przez Sebastian Słanek
+</footer>
+<?php
+	$polaczenie=mysqli_connect('localhost','root','','praktyki');
+	if ($polaczenie) {
+                echo "Połączyliśmy się z bazą danych";
+			   
+				
+			   
+			   $zapytanie="select * from osoba";
+			   $wynik=mysqli_query($polaczenie,$zapytanie);
+			   while($wiersz=mysqli_fetch_array($wynik)){
+				$imie[]= $wiersz['imie'];
+				$nazwisko[]= $wiersz['nazwisko'];
+				$iddane[]=$wiersz['id'];
+			   }
+			   if($_SERVER["REQUEST_METHOD"]=="POST"){
+					$osoby=$_POST['id_osoba'];
+                    $prace=$_POST['id_zaklad_pracy'];
+                    $datastart=$_POST['data_rozpoczecia_praktyk '];
+					$datakoniec=$_POST['data_rozpoczecia_praktyk '];
+					$insert="insert into praktyka values(null,'$praca','$osoby','$datastart','$datakoniec'";
+					if(mysqli_query($polaczenie,$insert)){
+                        echo "Dodano do bazy";
+                    }
+                    else{
+                        echo "Bład";
+
+			   		}
+			}
+		}
+?>
+<?php
+                for ($x=0;$x<count($imie);$x++){
+                    echo "<option value=$iddane[$x]>$imie[$x] $nazwisko[$x]</option>";
+                }
+				
+                    
+                ?>
 </body>
-</html>
+</HTML>
