@@ -1,31 +1,19 @@
-	<?php
-				// łączenie z bazą danych
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "egzamin";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "egzamin";
 
-				$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-				// sprawdzanie połączenia
-				if (!$conn) {
-				    die("Nieudane połączenie: " . mysqli_connect_error());
-				}
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT nazwaPliku, podpis FROM zdjęcia ORDER BY podpis DESC";
+$result = $conn->query($sql);
 
-				// zapytanie do bazy danych
-				$sql = "SELECT id, dataWyjazdu, cel, cena FROM wycieczki";
-
-				$result = mysqli_query($conn, $sql);
-
-				// wyświetlanie wyników
-				if (mysqli_num_rows($result) > 0) {
-				    while($row = mysqli_fetch_assoc($result)) {
-				        echo "<li>" . $row["id"] . ", dnia " . $row["dataWyjazdu"] . " jedziemy do " . $row["cel"] . ", cena " . $row["cena"] . "</li>";
-				    }
-				} else {
-				    echo "Brak dostępnych wycieczek.";
-				}
-
-				// zamykanie połączenia
-				mysqli_close($conn);
-			?>
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "<img src='" . $row["nazwaPliku"] . "' alt='" . $row["podpis"] . "'>";
+  }
+}
+$conn->close()
