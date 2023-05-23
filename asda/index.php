@@ -122,3 +122,60 @@ $<!DOCTYPE html>
     </section>
 </body>
 </html>
+
+    
+    
+    
+    
+   // Zmienne globalne
+var activePhoto = 1;
+
+// Funkcja obsługująca kliknięcie przycisku "Następne"
+function nextPhoto() {
+  activePhoto++;
+  if (activePhoto > 7) {
+    activePhoto = 1;
+  }
+  displayActivePhoto();
+}
+
+// Funkcja obsługująca kliknięcie przycisku "Poprzednie"
+function previousPhoto() {
+  activePhoto--;
+  if (activePhoto < 1) {
+    activePhoto = 7;
+  }
+  displayActivePhoto();
+}
+
+// Funkcja obsługująca kliknięcie miniatury zdjęcia
+function selectPhoto(photoNumber) {
+  activePhoto = photoNumber;
+  displayActivePhoto();
+}
+
+// Funkcja wyświetlająca aktywne zdjęcie
+function displayActivePhoto() {
+  var activePhotoElement = document.getElementById("active-photo");
+  activePhotoElement.src = "photos/photo" + activePhoto + ".jpg";
+}
+
+// Inicjalizacja skryptu po załadowaniu strony
+document.addEventListener("DOMContentLoaded", function(event) {
+  displayActivePhoto();
+
+  var nextButton = document.getElementById("next-button");
+  nextButton.addEventListener("click", nextPhoto);
+
+  var previousButton = document.getElementById("previous-button");
+  previousButton.addEventListener("click", previousPhoto);
+
+  var thumbnailElements = document.getElementsByClassName("thumbnail");
+  for (var i = 0; i < thumbnailElements.length; i++) {
+    thumbnailElements[i].addEventListener("click", function() {
+      var photoNumber = parseInt(this.getAttribute("data-photo-number"));
+      selectPhoto(photoNumber);
+    });
+  }
+});
+ 
