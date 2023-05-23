@@ -14,16 +14,15 @@
     </section>
     <section class="boki">
         <section class="lewy">
-            <h2>Zadanie 1 - przeglądanie zdjęć</h2>
-            <button>Poprzednie</button>
-                <img src="zdj1.jpg" alt="galeria" class="duze">
-            <button onclick="zdjecia()">Następne</button>
+            <button>prev</button>
+            <img src="zdj1.jpg" alt="galeria" id="duze">
+            <button onclick="wstawZdjecie()">next</button>
             <hr>
-            <img src="zdj1.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(1)">
-            <img src="zdj2.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(2)">
-            <img src="zdj3.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(3)"> 
-            <img src="zdj4.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(4)">
-            <img src="zdj5.jpg" alt="miniatura" class="miniatura" onclick="zdjecia(5)">
+            <img src="zdj1.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(1)">
+            <img src="zdj2.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(2)">
+            <img src="zdj3.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(3)">
+            <img src="zdj4.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(4)">
+            <img src="zdj5.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(5)">
         </section>
         <section class="prawy">
             <h2>Podaj składową H koloru w kodzie HSL</h2>
@@ -66,27 +65,27 @@
             Wynik działania
         </output>
     </section>
+   
+         <script>
+        function wstawZdjecie(numer){
+            if(numer=="1"){
+                document.getElementById("duze").src="zdj1.jpg";
+            }
+            if(numer=="2"){
+                document.getElementById("duze").src="zdj2.jpg";
+            }
+            if(numer=="3"){
+                document.getElementById("duze").src="zdj3.jpg";
+            }
+            if(numer=="4"){
+                document.getElementById("duze").src="zdj4.jpg";
+            }
+            if(numer=="5"){
+                document.getElementById("duze").src="zdj5.jpg";
+            }
+        }
+    </script>
     
-    <script>
-        function zdjecia(nr){
-             if(nr=="1"){
-                 document.getElementById("duzy").src="1.jpg"
-             }
-             if(nr=="2"){
-                 document.getElementById("duzy").src="2.jpg"
-             }
-             if(nr=="3"){
-                 document.getElementById("duzy").src="3.jpg"
-             }
-             if(nr=="4"){
-                 document.getElementById("duzy").src="4.jpg"
-             }
-             if(nr=="5"){
-                 document.getElementById("duzy").src="5.jpg"
-             }
-         } 
-         
-     </script>
  
     <footer>
         Stronę wykonał Przemek
