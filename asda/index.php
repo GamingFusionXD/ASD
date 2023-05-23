@@ -16,13 +16,15 @@
         <section class="lewy">
             <button>prev</button>
             <img src="zdj1.jpg" alt="galeria" id="duze">
-            <button onclick="wstawZdjecie()">next</button>
+            <button>next</button>
             <hr>
             <img src="zdj1.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(1)">
             <img src="zdj2.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(2)">
             <img src="zdj3.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(3)">
             <img src="zdj4.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(4)">
             <img src="zdj5.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(5)">
+            <img src="zdj6.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(6)">
+            <img src="zdj7.jpg" alt="miniatura" class="miniatura" onclick="wstawZdjecie(7)">
         </section>
         <section class="prawy">
             <h2>Podaj składową H koloru w kodzie HSL</h2>
@@ -82,6 +84,12 @@
             }
             if(numer=="5"){
                 document.getElementById("duze").src="zdj5.jpg";
+            }
+            if(numer=="6"){
+                document.getElementById("duze").src="zdj6.jpg";
+            }
+            if(numer=="7"){
+                document.getElementById("duze").src="zdj7.jpg";
             }
         }
     </script>
