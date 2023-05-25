@@ -100,3 +100,14 @@
     </footer>
 </body>
 </html>
+
+
+Sebastian
+
+1. do czego służy i jak działa kopia częściowa w MS SQL Server?
+
+2. Co to jest instancja MS SQL Server?
+
+3. Jak dodać użytkownika w MS SQL Server?
+
+4. Czym różni się uwierzytelnienie Windows od SQL Serwer w MS SQL Server
