@@ -59,3 +59,107 @@
 </body>
 </html>
 
+
+
+/* styl5.css */
+
+/* Domyślne wartości */
+body {
+    font-family: Georgia;
+}
+
+/* Nagłówek i stopka */
+header, footer {
+    background-color: #C75839;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Blok lewy2 */
+#lewy2 {
+    background-color: #FF8A65;
+    width: 25%;
+    height: 300px;
+    padding-top: 50px;
+}
+
+/* Blok prawy1 */
+#prawy1 {
+    background-color: Snow;
+    width: 75%;
+    height: 300px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* Blok lewy2 */
+#lewy2 {
+    background-color: #7DA453;
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Blok srodek2 */
+#srodek2 {
+    background-color: #AED581;
+    width: 1050px;
+    height: 230px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Blok prawy2 */
+#prawy2 {
+    background-color: #7DA453;
+    width: 220px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Selektor obrazu */
+img {
+    width: 350px;
+    margin: 10px;
+    box-shadow: 15px 15px 10px DimGray;
+}
+
+/* Selektor tabeli i komórki tabeli */
+table, td, th {
+    border: 1px solid DimGray;
+}
+
+/* Selektor tabeli */
+table {
+    width: 80%;
+    margin: auto;
+}
+
+/* Selektor komórki */
+td:hover {
+    background-color: aqua;
+}
+
+/* Pierwsza litera nagłówka */
+h1:first-letter, h2:first-letter, h3:first-letter {
+    font-size: 150%;
+    color: Olive;
+}
+
+/* Selektor elementu listy */
+li {
+    margin: 5px;
+}
+
+/* Znak markera w elemencie listy */
+li::marker {
+    color: Snow;
+}
+
+
