@@ -8,14 +8,22 @@ header, footer {
     padding: 10px;
     text-align: center;
 }
-
-
-#lewy2 {
+#lewy1{
     background-color: #FF8A65;
     width: 25%;
     height: 300px;
     padding-top: 50px;
     float: left;
+    
+    }
+
+#lewy2 {
+    background-color: #7da453;
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    float: left;
+    border-radius: 20px;
 
 }
 
@@ -24,18 +32,12 @@ header, footer {
     width: 75%;
     height: 300px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    float: left;
     
 }
 
-#lewy2 {
-    background-color: #7DA453;
-    width: 400px;
-    height: 250px;
-    padding: 10px;
-    border-radius: 20px;
-    float: left;
-}
 
 #srodek2 {
     background-color: #AED581;
@@ -51,7 +53,7 @@ header, footer {
 
 #prawy2 {
     background-color: #7DA453;
-    width: 220px;
+    width: 350px;
     height: 250px;
     padding: 10px;
     border-radius: 20px;
@@ -60,7 +62,7 @@ header, footer {
 }
 
 img {
-    width: 350px;
+    width: 190px;
     margin: 10px;
     box-shadow: 15px 15px 10px DimGray;
     float: left;
